@@ -9,6 +9,7 @@
   with_items:
       "{{ jenkins_init_changes }}"
   register: jenkins_init_prefix
+  when: ansible_connection != 'docker'
 
 - name: Set the Jenkins home directory
   lineinfile:
@@ -19,7 +20,7 @@
 
 - name: Immediately restart Jenkins on init config changes.
   service: name=jenkins state=restarted
-  when: jenkins_init_prefix.changed
+  when: jenkins_init_prefix.changed and ansible_connection != 'docker'
 
 - name: Set HTTP port in Jenkins config.
   lineinfile:
@@ -45,12 +46,13 @@
     owner: "{{ jenkins_process_user }}"
     group: "{{ jenkins_process_group }}"
     mode: 0775
+  when: ansible_connection != 'docker'
 
 - name: Trigger handlers immediately in case Jenkins was installed
   meta: flush_handlers
 
 - name: Immediately restart Jenkins on http or user changes.
   service: name=jenkins state=restarted
-  when: (jenkins_users_config is defined and jenkins_users_config.changed) or
+  when: ansible_connection != 'docker' and (jenkins_users_config is defined and jenkins_users_config.changed) or
         (jenkins_http_config is defined and jenkins_http_config.changed) or
         (jenkins_home_config is defined and jenkins_home_config.changed)
