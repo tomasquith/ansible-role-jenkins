@@ -1,7 +1,7 @@
 ---
-dependencies:
-  - geerlingguy.java
-  - alvistack.dumb-init
+dependencies: []
+  # - geerlingguy.java
+  # - alvistack.dumb-init
 
 galaxy_info:
   author: geerlingguy
