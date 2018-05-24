@@ -1,7 +1,7 @@
 ---
-- name: restart jenkins
-  service: name=jenkins state=restarted
-  when: ansible_connection != 'docker'
+# - name: restart jenkins
+#   service: name=jenkins state=restarted
+#   when: ansible_connection != 'docker'
 
 - name: configure default users
   template:
