@@ -28,11 +28,14 @@
   get_url:
     url: https://raw.githubusercontent.com/jenkinsci/docker/master/install-plugins.sh
     dest: /usr/local/bin/install-plugins.sh
+    mode: '+rx'
 
 - name: Get supporting bash script from official jenkins github
   get_url:
     url: https://raw.githubusercontent.com/jenkinsci/docker/master/jenkins-support
     dest: /usr/local/bin/jenkins-support
+    mode: '+rx'
+
 
 - name: install plugins
   shell: "whoami && /usr/local/bin/install-plugins.sh {{ item.key }}:{{ item.value }}"
