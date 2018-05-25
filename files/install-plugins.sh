@@ -7,7 +7,7 @@
 
 set -o pipefail
 
-REF_DIR=${REF:-/usr/lib/jenkins/ref/plugins}
+REF_DIR=${REF:-/var/lib/jenkins/ref/plugins}
 FAILED="$REF_DIR/failed-plugins.txt"
 
 . /usr/local/bin/jenkins-support
@@ -130,7 +130,7 @@ resolveDependencies() {
 }
 
 bundledPlugins() {
-    local JENKINS_WAR=/usr/lib/jenkins/jenkins.war
+    local JENKINS_WAR=/var/lib/jenkins/jenkins.war
     if [ -f $JENKINS_WAR ]
     then
         TEMP_PLUGIN_DIR=/tmp/plugintemp.$$
@@ -169,7 +169,7 @@ installedPlugins() {
 
 jenkinsMajorMinorVersion() {
     local JENKINS_WAR
-    JENKINS_WAR=/usr/lib/jenkins/jenkins.war
+    JENKINS_WAR=/var/lib/jenkins/jenkins.war
     if [[ -f "$JENKINS_WAR" ]]; then
         local version major minor
         version="$(java -jar /usr/share/jenkins/jenkins.war --version)"
