@@ -26,7 +26,7 @@
 
 - name: Download jenkins war with check (sha256)
   get_url:
-    url: https://repo.jenkins-ci.org/public/org/jenkins-ci/main/jenkins-war/{{ jenkins_version }}/jenkins-war-${{ jenkins_version }}.war
+    url: https://repo.jenkins-ci.org/public/org/jenkins-ci/main/jenkins-war/{{ jenkins_version }}/jenkins-war-{{ jenkins_version }}.war
     dest: /usr/share/jenkins/jenkins.war
     checksum: 'sha256:{{ jenkins_checksum }}'
 
