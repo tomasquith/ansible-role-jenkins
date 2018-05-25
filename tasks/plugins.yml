@@ -36,7 +36,7 @@
 
 - name: install plugins
   shell: "/usr/local/bin/install-plugins.sh {{ item.key }}:{{ item.value }}"
-  loop: "{{ lookup('dict', jenkins_plugins) }}"
+  with_dict: "{{jenkins_plugins}}"
 
 # # Update Jenkins so that plugin updates don't fail.
 # - name: Create update directory
