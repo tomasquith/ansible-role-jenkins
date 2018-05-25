@@ -24,6 +24,11 @@
 #     dest: "/tmp/jenkins-{{ jenkins_version }}-1.1.noarch.rpm"
 #   when: jenkins_version is defined
 
+- file:
+    path: '/usr/share/jenkins'
+    state: directory
+    owner: jenkins
+
 - name: Download jenkins war with check (sha256)
   get_url:
     url: https://repo.jenkins-ci.org/public/org/jenkins-ci/main/jenkins-war/{{ jenkins_version }}/jenkins-war-{{ jenkins_version }}.war
