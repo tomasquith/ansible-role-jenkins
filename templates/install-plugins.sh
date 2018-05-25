@@ -9,7 +9,6 @@ set -o pipefail
 
 REF_DIR=${REF:-/usr/lib/jenkins/ref/plugins}
 FAILED="$REF_DIR/failed-plugins.txt"
-JENKINS_HOME="{{ jenkins_home }}"
 
 . /usr/local/bin/jenkins-support
 
