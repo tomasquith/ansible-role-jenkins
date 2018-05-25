@@ -30,12 +30,12 @@
     dest: /usr/local/bin/install-plugins.sh
     mode: '+rx'
 
-- file:
-    src: files/install-plugins.sh
-    dest: /usr/local/bin/install-plugins.sh
-    owner: "{{ jenkins_process_user }}"
-    group: "{{ jenkins_process_group }}"
-    mode: '+rx'
+# - file:
+#     src: files/install-plugins.sh
+#     dest: /usr/local/bin/install-plugins.sh
+#     owner: "{{ jenkins_process_user }}"
+#     group: "{{ jenkins_process_group }}"
+#     mode: '+rx'
 
 # - name: update path in plugin install script
 #   shell: "sed 's#/usr/share/jenkins#/usr/lib/jenkins#' /usr/local/bin/install-plugins.sh"
