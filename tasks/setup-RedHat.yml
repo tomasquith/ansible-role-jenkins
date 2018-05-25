@@ -24,6 +24,12 @@
 #     dest: "/tmp/jenkins-{{ jenkins_version }}-1.1.noarch.rpm"
 #   when: jenkins_version is defined
 
+- name: Add jenkins user
+  user:
+    name: jenkins
+    shell: /bin/bash
+    group: jenkins
+
 - file:
     path: '/usr/share/jenkins'
     state: directory
