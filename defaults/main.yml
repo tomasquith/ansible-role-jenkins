@@ -21,6 +21,7 @@ jenkins_plugins:
   docker-workflow: '1.17'
 
 jenkins_checksum: 2d71b8f87c8417f9303a73d52901a59678ee6c0eefcf7325efed6035ff39372a
+jenkins_version: '2.124'
 
 jenkins_plugins_state: present
 jenkins_plugin_updates_expiration: 86400
