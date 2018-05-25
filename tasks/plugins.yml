@@ -28,11 +28,13 @@
   get_url:
     url: https://raw.githubusercontent.com/jenkinsci/docker/master/install-plugins.sh
     dest: /usr/local/bin/install-plugins.sh
+    owner: jenkins
 
 - name: Get supporting bash script from official jenkins github
   get_url:
     url: https://raw.githubusercontent.com/jenkinsci/docker/master/jenkins-support
     dest: /usr/local/bin/jenkins-support
+    owner: jenkins
 
 - name: install plugins
   shell: "/usr/local/bin/install-plugins.sh {{ item.key }}:{{ item.value }}"
