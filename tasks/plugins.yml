@@ -35,7 +35,7 @@
     dest: /usr/local/bin/jenkins-support
 
 - name: install plugins
-  shell: "/usr/local/bin/install-plugins.sh {{ item.key }}:{{ item.value }}"
+  shell: "whoami && /usr/local/bin/install-plugins.sh {{ item.key }}:{{ item.value }}"
   with_dict: "{{jenkins_plugins}}"
 
 # # Update Jenkins so that plugin updates don't fail.
