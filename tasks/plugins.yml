@@ -41,6 +41,9 @@
 - name: update path in plugin install script
   shell: "sed 's#/usr/share/jenkins#/usr/lib/jenkins#' /usr/local/bin/install-plugins.sh"
 
+- name: debug
+  shell: stat '/usr/lib/jenkins/jenkins.war'
+
 - name: Get supporting bash script from official jenkins github
   get_url:
     url: https://raw.githubusercontent.com/jenkinsci/docker/master/jenkins-support
