@@ -12,7 +12,7 @@
     mode: '+rx'
 
 - name: install plugins
-  shell: "JENKINS_UC=https://updates.jenkins.io /usr/local/bin/install-plugins.sh {{ item.key }}:{{ item.value }}"
+  shell: "JENKINS_UC=https://updates.jenkins.io /usr/local/bin/install-plugins.sh {{ item.key }}:{{ item.value }} REF={{jenkins_home}}/plugins"
   with_dict: "{{jenkins_plugins}}"
 
 - file:
