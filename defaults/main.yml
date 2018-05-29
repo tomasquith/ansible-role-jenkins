@@ -4,6 +4,7 @@
 # jenkins_version: "1.644"
 # jenkins_pkg_url: "https://www.example.com"
 
+jenkins_home: /var/lib/jenkins
 jenkins_hostname: localhost
 jenkins_http_port: 8080
 jenkins_jar_location: /opt/jenkins-cli.jar
@@ -16,9 +17,6 @@ jenkins_plugins:
 
 jenkins_checksum: 2d71b8f87c8417f9303a73d52901a59678ee6c0eefcf7325efed6035ff39372a
 jenkins_version: '2.124'
-
-jenkins_admin_username: admin
-jenkins_admin_password: admin
 
 jenkins_executors: 4
 
