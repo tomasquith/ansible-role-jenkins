@@ -11,6 +11,9 @@ jenkins_jar_location: /opt/jenkins-cli.jar
 jenkins_url_prefix: ""
 jenkins_java_options: "-Djenkins.install.runSetupWizard=false"
 
+jenkins_admin_username: admin
+jenkins_admin_password: admin123
+
 jenkins_plugins:
   blueocean: '1.5.0'
   docker-workflow: '1.17'
