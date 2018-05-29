@@ -7,21 +7,21 @@
       - unzip
     state: present
 
-- name: Ensure group "jenkins" exists
+- name: Ensure group ""{{ jenkins_process_group }}"" exists
   group:
-    name: jenkins
+    name: "{{ jenkins_process_group }}"
     state: present
 
 - name: Add jenkins user
   user:
     name: jenkins
     shell: /bin/bash
-    group: jenkins
+    group: "{{ jenkins_process_group }}"
 
 - file:
     path: '/usr/share/jenkins'
     state: directory
-    owner: jenkins
+    owner: "{{ jenkins_process_user }}"
 
 - name: Download jenkins war with check (sha256)
   get_url:
@@ -31,10 +31,10 @@
 
 - file: 
     path: "{{ jenkins_home }}"
-    owner: jenkins
+    owner: "{{ jenkins_process_user }}"
     recurse: true
 
 - file:
     path: "/usr/share/jenkins/ref"
-    owner: jenkins
+    owner: "{{ jenkins_process_user }}"
     recurse: true

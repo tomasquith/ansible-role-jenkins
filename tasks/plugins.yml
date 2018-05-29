@@ -17,8 +17,7 @@
 
 - file:
     path: "{{jenkins_plugins}}/plugins"
-    owner: jenkins
-    group: jenkins
+    owner: "{{ jenkins_process_user }}"
+    group: "{{ jenkins_process_group }}"
     mode: 770
     recurse: true
-    

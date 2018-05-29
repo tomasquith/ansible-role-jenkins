@@ -18,6 +18,11 @@
     group: "{{ jenkins_process_group }}"
     mode: 0775
 
+- file:
+    path: '{{ jenkins_home }}/init.groovy.d'
+    state: directory
+    owner: "{{ jenkins_process_user }}"
+
 - name: configure default users
   template:
     src: basic-security.groovy
