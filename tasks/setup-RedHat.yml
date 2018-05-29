@@ -35,6 +35,11 @@
     recurse: true
 
 - file:
-    path: "/usr/share/jenkins/ref"
+    path: "/usr/share/jenkins"
+    owner: "{{ jenkins_process_user }}"
+    recurse: true
+
+- file:
+    path: "/var/lib/jenkins"
     owner: "{{ jenkins_process_user }}"
     recurse: true
