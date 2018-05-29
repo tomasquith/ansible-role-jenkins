@@ -1,3 +1,3 @@
 import jenkins.model.*
 
-Jenkins.instance.setNumExecutors('{{ jenkins_executors }}')
+Jenkins.instance.setNumExecutors({{ jenkins_executors }})
