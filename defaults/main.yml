@@ -4,7 +4,7 @@
 # jenkins_version: "1.644"
 # jenkins_pkg_url: "https://www.example.com"
 
-jenkins_home: /var/lib/jenkins
+jenkins_home: /var/jenkins_home
 jenkins_hostname: localhost
 jenkins_http_port: 8080
 jenkins_jar_location: /opt/jenkins-cli.jar

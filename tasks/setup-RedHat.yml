@@ -22,6 +22,7 @@
     path: '/usr/share/jenkins'
     state: directory
     owner: "{{ jenkins_process_user }}"
+    group: "{{ jenkins_process_group }}"
 
 - name: Download jenkins war with check (sha256)
   get_url:
@@ -32,14 +33,17 @@
 - file: 
     path: "{{ jenkins_home }}"
     owner: "{{ jenkins_process_user }}"
+    group: "{{ jenkins_process_group }}"
     recurse: true
 
 - file:
     path: "/usr/share/jenkins"
     owner: "{{ jenkins_process_user }}"
+    group: "{{ jenkins_process_group }}"
     recurse: true
 
 - file:
     path: "/var/lib/jenkins"
     owner: "{{ jenkins_process_user }}"
+    group: "{{ jenkins_process_group }}"
     recurse: true
